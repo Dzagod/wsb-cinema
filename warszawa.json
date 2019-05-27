@@ -1,0 +1,39 @@
+{
+    "city": "Warszawa",
+    "room": "cinemaWars.html",
+    "movies": [
+        {
+            "title": "THE FOUR",
+            "type": "Akcja",
+            "duration": 130,
+            "time": "14:00",
+            "age": 16,
+            "image": "theFour.png",
+            "description": "Wojna w Afganistanie według znanego rezysera Mike Jorggego, tym razem spoglądamy na konflikt oczami 4 zupełnie róznych zołnierzy amerykanskich, rózni ich pochodzenie, motywy i poglądy polityczne, łączy przyjaźń, jednostka i stałe widmo śmierci."
+        },
+
+        {
+            "title": "Nowe, stare",
+            "type": "Dramat",
+            "duration": 127,
+            "time": "17:00",
+            "age": 13,
+            "image": "stareNowe.png",
+            "description": "Historia o odwadze, sile słowa i powojennym świecie. Rodzących się na nowo nieraz skomplikowanych relacjach. Miejscem akcji jest hiszpańska prowincja Sapad, a bohaterami jej mieszkańcy. Tu od lat mieszka Maria (Alona Moore) – włoska pisarka i miejscowy autorytet."
+
+        },
+
+        {
+            "title": "Samotna droga",
+            "type": "Horror",
+            "duration": 144,
+            "time": "21:00",
+            "age": 16,
+            "image": "samotnaDroga.png",
+            "description": "Kiedy w tajemniczych okolicznościach ginie towarzysz Gima, musi on zmierzyć się z nieznanymi siłami, które próbują nie tylko odciąć mu drogę do domu, ale i uwikłać go w morderstwo przyjaciela."
+        }
+
+        
+    ]
+
+}

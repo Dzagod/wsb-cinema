@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='kino.css'/>
+
+    <title>Logowanie</title>
+</head>
+<body>
+    
+    <div>
+        <div class="header">
+            <img src="kinoPlus.png" alt="kinoPlusLogo" class="logo">
+        </div>
+
+        <div class="gallery">
+        </div>
+
+        <div>
+            <div class="loginForm">
+                 <div>
+                     <h3>Witamy w serwisie Rezerwacji Online KinoPlus!</h3>
+                 </div>
+                 <h4>Zaloguj się by dokonać rezerwacji w systemie:</h4>
+
+                 <div class="formField">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="user_email" class="inputStyle">
+                  </div>
+                  <div class="formField">
+                    <label for="password">Hasło:</label>
+                    <input type="password" id="inputPassword" name="user_password" class="inputStyle">
+                    <p class="passInfo">Hasło musi składać się z min. 8 znaków </br>w tym 1 duzej litery i 1 znaku specjalnego.</p>
+                  </div>
+                  <div>
+                      <button type="submit" class="loginButton" onclick="testUserData()">ZALOGUJ</button>
+                  </div>          
+            </div>
+        </div>
+        <div class="footer">
+            <p>Kino Plus Your movies Inc. <br>Warszawa Marszałkowska 1<br> kontakt kontakt@kinoplus.io<br> Odwiedź nasz profil i bądź na bieząco</p>
+            <a href="https://www.facebook.com/"><img src="FbIcon.png" alt="facebookIcon"></a>
+        </div>
+    </div>
+
+    <script>
+        function testUserData() {
+            var emailTest = document.getElementById("email").value;
+            if(emailTest.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)){ 
+                var pass = document.getElementById("inputPassword").value; 
+                    if (pass.match(/[a-z]/g) && pass.match(/[A-Z]/g) && pass.match( /[0-9]/g) && pass.match( /[^a-zA-Z\d]/g) && pass.length >= 8){ 
+                        alert("Zalogowano");
+
+                        document.location = 'city.html';
+                        return true;
+                    } 
+                    else{
+                        alert("Błąd, wybierz hasło spełniające kryteria");
+                        return false;
+                    }  
+            }
+            else{
+                alert("Niepoprawny adres email");
+                return false;
+            }
+        } 
+
+    </script>
+</body>
+</html>
