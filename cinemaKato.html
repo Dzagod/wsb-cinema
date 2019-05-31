@@ -13,7 +13,7 @@
         <div class="header">
             <img src="kinoPlus.png" alt="kinoPlusLogo" class="logo">
     </div>
-    <div class="movieInfo">Nazwa seansu i godzina</div>
+    <div class="movieInfo"></div>
     <div class="cinemaHall">
         <div class="screen">EKRAN</div>
         
@@ -98,6 +98,11 @@
     </div>
 
     <script>
+        window.onload = () => {
+            const header = document.querySelector('.movieInfo')
+            header.innerHTML = `${sessionStorage.getItem('title')} ${sessionStorage.getItem('time')}`;
+        }
+
         const bookedSeats = [];
 
         function bookSeat({ target }){
@@ -121,6 +126,18 @@
         function book() {
             sessionStorage.setItem('booking', bookedSeats);
         }
+
+        window.setTimeout(function() {
+            const alertText = 'Sesja wygasła, za chwile zostaniesz przeniesiony na stronę logowania.'
+
+            alert(alertText);
+
+            book = function() {
+                alert(alertText);
+            }
+
+            window.setTimeout(function() { window.location = 'index.html' }, 1000 * 5)
+        }, 1000 * 60 * 10)
 
         clcikedSeat();
         </script>

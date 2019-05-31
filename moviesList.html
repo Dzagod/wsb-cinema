@@ -167,19 +167,22 @@
         function initMovies() {
             const container = document.querySelector('#program');
             program.innerHTML = cityMovies.movies.map(function(movie) {
+                console.log(JSON.stringify(movie).replace(/"/g, '\"'));
                 return `<div class="movieList">
                     <img src="${movie.image}" alt="firstMovie">
                     <div class="movieDescription">
                         <h4>${movie.title} ${movie.time}</h4>
                         <p>${movie.description}</p>
-                        <button class="loginButton" onclick="openCinema()">Rezerwuj</button>             
+                        <button class="loginButton" onclick="openCinema('${movie.title}', '${movie.time}')">Rezerwuj</button>             
                     </div>
                 </div>`
             })
         }
 
-        function openCinema() {
+        function openCinema(title, time) {
             sessionStorage.setItem('city', urlParams.get('city'));
+            sessionStorage.setItem('title', title);
+            sessionStorage.setItem('time', time);
             window.location = cityMovies.room;
         }
 
