@@ -21,43 +21,6 @@
         
         <div id="program"></div>
 
-        <div class="movieList">
-            <img src="hiker.png" alt="firstMovie">
-            <div class="movieDescription">
-                <h4>Tytuł filmu i godzina</h4>
-                <p>jwndjwendhjwen</p>
-                <button class="loginButton">Rezerwuj</button>             
-            </div>
-        </div>
-
-        <div class="movieList">
-                <img src="stareNowe.png" alt="firstMovie">
-                <div class="movieDescription">
-                    <h4>Tytuł filmu i godzina</h4>
-                    <p>Opis</p>
-                    <button class="loginButton">Rezerwuj</button>                  </div>
-        </div>
-
-        <div class="movieList">
-                <img src="samotnaDroga.png" alt="firstMovie">
-                <div class="movieDescription">
-                    <h4>Tytuł filmu i godzina</h4>
-                    <p>jwndjwendhjwen</p>   
-                    <button class="loginButton">Rezerwuj</button>                  </div>
-        </div>
-
-        <div class="movieList">
-                <img src="theFour.png" alt="firstMovie">
-                <div class="movieDescription">
-                    <h4>Tytuł filmu i godzina</h4>
-                    <p>jwndjwendhjwen</p>
-                    <button class="loginButton">Rezerwuj</button>                  </div>
-        </div>
-
-
-
-
-
         <div class="footer">
             <p>Kino Plus Your movies Inc. <br>Warszawa Marszałkowska 1<br> kontakt kontakt@kinoplus.io<br> Odwiedź nasz profil i bądź na bieząco</p>
             <a href="https://www.facebook.com/"><img src="FbIcon.png" alt="facebookIcon"></a>
@@ -193,18 +156,33 @@
             initMovies();
         }
 
-        function initMovies() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const city = urlParams.get('city');
 
-            const cityMovies = data.find(function (el) { 
-                return el.city.toLowerCase() === city.toLowerCase()
-            });
-            console.log(cityMovies);
+        const urlParams = new URLSearchParams(window.location.search);
+        const city = urlParams.get('city');
+
+        const cityMovies = data.find(function(el) { 
+            return el.city.toLowerCase() === city.toLowerCase()
+        });
+
+        function initMovies() {
+            const container = document.querySelector('#program');
+            program.innerHTML = cityMovies.movies.map(function(movie) {
+                return `<div class="movieList">
+                    <img src="${movie.image}" alt="firstMovie">
+                    <div class="movieDescription">
+                        <h4>${movie.title} ${movie.time}</h4>
+                        <p>${movie.description}</p>
+                        <button class="loginButton" onclick="openCinema()">Rezerwuj</button>             
+                    </div>
+                </div>`
+            })
         }
 
+        function openCinema() {
+            sessionStorage.setItem('city', urlParams.get('city'));
+            window.location = cityMovies.room;
+        }
 
-        console.log(data);
     </script>
 </body>
 </html>

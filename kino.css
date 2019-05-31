@@ -172,6 +172,9 @@ td:hover {
   margin: 0.6em;
   margin-left: 2em; }
 
+.bookedSeat {
+  background-color: red; }
+
 .confirmButton {
   font-size: 0.5em;
   padding: 0.1em;
@@ -198,8 +201,6 @@ td:hover {
     font-weight: 700;
     margin-bottom: 1em;
     font-size: 2em; }
-  .movieDescription p {
-    inline-size: 0.2em; }
 
 .intro {
   font-size: 2em;
