@@ -1,0 +1,39 @@
+{
+    "city": "Wrocław",
+    "room": "cinemaWroc.html",
+    "movies": [
+        {
+            "title": "Bardziej Obcy",
+            "type": "Horror",
+            "duration": 111,
+            "time": "20:00",
+            "age": 16,
+            "image": "bardziejObcy.png",
+            "description": "lorem ipsum and ........"
+
+        },
+
+        {
+            "title": "WIld Texas",
+            "type": "Akcja",
+            "duration": 119,
+            "time": "16:00",
+            "age": 13,
+            "image": "",
+            "description": "lorem ipsum ......."
+
+        },
+
+        {
+            "title": "Love and Hate",
+            "type": "Komedia romantyczna",
+            "duration": 104,
+            "time": "14:00",
+            "age": 13,
+            "image": "loveHate.png",
+            "description": "lorem ipsum......."
+        }
+
+    ]
+
+}

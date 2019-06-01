@@ -41,35 +41,35 @@
         <div>
             <table>
                 <tr>
-                    <td class="rowNumber">D</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
+                    <td class="rowNumber noSeat">D</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
                 </tr>
             </table>  
         </div>
         <div>
             <table>
                 <tr>
-                    <td class="rowNumber">E</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td>
+                    <td class="rowNumber noSeat">E</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td>
                 </tr>
             </table> 
         </div>
         <div>
             <table>
                 <tr>
-                    <td class="rowNumber">F</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td>
+                    <td class="rowNumber noSeat">F</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td>
                 </tr>
             </table>
         </div>
         <div>
             <table>
                 <tr>
-                    <td class="rowNumber">G</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td>
+                    <td class="rowNumber noSeat">G</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td>
                 </tr>
             </table>
         </div>
         <div>
             <table>
                 <tr>
-                    <td class="rowNumber">H</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td>
+                    <td class="rowNumber noSeat">H</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td>
                 </tr>
             </table>
         </div>
@@ -80,7 +80,7 @@
             <p>Miejsce zarezerwowane</p>
         </div>
         <div>
-            <button class="confirmButton">POTWIERDŹ REZERWACJĘ</button>
+            <button class="confirmButton" onclick="book()">POTWIERDŹ REZERWACJĘ</button>
         </div>
     </div>
     
@@ -89,5 +89,51 @@
         <a href="https://www.facebook.com/"><img src="FbIcon.png" alt="facebookIcon"></a>
     </div>
 
+    <script>
+            window.onload = () => {
+                const header = document.querySelector('.movieInfo')
+                header.innerHTML = `${sessionStorage.getItem('title')} ${sessionStorage.getItem('time')}`;
+            }
+    
+            window.setTimeout(function() {
+                const alertText = 'Sesja wygasła, za chwile zostaniesz przeniesiony na stronę logowania.'
+    
+                alert(alertText);
+    
+                book = function() {
+                    alert(alertText);
+                }
+    
+                window.setTimeout(function() { window.location = 'index.html' }, 1000 * 5)
+            }, 1000 * 60 * 10)
+    
+            const bookedSeats = [];
+    
+            function bookSeat({ target }){
+                if (!target.classList.contains('noSeat')) {
+                    target.classList.toggle('bookedSeat');
+    
+                    const row = target.parentElement.firstElementChild.innerHTML;
+                    const seat = target.innerHTML;
+    
+                    bookedSeats.push(`${row} ${seat}`);
+                }
+            };
+    
+            function clcikedSeat(){
+                var seat = document.querySelectorAll("td");
+                for (var i=0;i<seat.length;i++){
+                    seat[i].onclick = bookSeat;
+                };
+            }
+    
+            function book() {
+                sessionStorage.setItem('booking', bookedSeats);
+                window.location = "summary.html";
+    
+            }
+    
+            clcikedSeat();
+    </script>
 </body>
 </html>

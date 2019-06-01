@@ -94,7 +94,7 @@
             <p>Miejsce zarezerwowane</p>
         </div>
         <div>
-            <button class="confirmButton">POTWIERDŹ REZERWACJĘ</button>
+            <button class="confirmButton" onclick="book()">POTWIERDŹ REZERWACJĘ</button>
         </div>
     </div>
     
@@ -102,6 +102,53 @@
         <p>Kino Plus Your movies Inc. <br>Warszawa Marszałkowska 1<br> Kontakt: kontakt@kinoplus.io<br> Odwiedź nasz profil i bądź na bieząco</p>
         <a href="https://www.facebook.com/"><img src="FbIcon.png" alt="facebookIcon"></a>
     </div>
+
+    <script>
+            window.onload = () => {
+                const header = document.querySelector('.movieInfo')
+                header.innerHTML = `${sessionStorage.getItem('title')} ${sessionStorage.getItem('time')}`;
+            }
+    
+            window.setTimeout(function() {
+                const alertText = 'Sesja wygasła, za chwile zostaniesz przeniesiony na stronę logowania.'
+    
+                alert(alertText);
+    
+                book = function() {
+                    alert(alertText);
+                }
+    
+                window.setTimeout(function() { window.location = 'index.html' }, 1000 * 5)
+            }, 1000 * 60 * 10)
+    
+            const bookedSeats = [];
+    
+            function bookSeat({ target }){
+                if (!target.classList.contains('noSeat')) {
+                    target.classList.toggle('bookedSeat');
+    
+                    const row = target.parentElement.firstElementChild.innerHTML;
+                    const seat = target.innerHTML;
+    
+                    bookedSeats.push(`${row} ${seat}`);
+                }
+            };
+    
+            function clcikedSeat(){
+                var seat = document.querySelectorAll("td");
+                for (var i=0;i<seat.length;i++){
+                    seat[i].onclick = bookSeat;
+                };
+            }
+    
+            function book() {
+                sessionStorage.setItem('booking', bookedSeats);
+                window.location = "summary.html";
+    
+            }
+    
+            clcikedSeat();
+    </script>
 
 </body>
 </html>

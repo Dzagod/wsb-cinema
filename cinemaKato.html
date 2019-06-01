@@ -103,6 +103,18 @@
             header.innerHTML = `${sessionStorage.getItem('title')} ${sessionStorage.getItem('time')}`;
         }
 
+        window.setTimeout(function() {
+            const alertText = 'Sesja wygasła, za chwile zostaniesz przeniesiony na stronę logowania.'
+
+            alert(alertText);
+
+            book = function() {
+                alert(alertText);
+            }
+
+            window.setTimeout(function() { window.location = 'index.html' }, 1000 * 5)
+        }, 1000 * 60 * 10)
+
         const bookedSeats = [];
 
         function bookSeat({ target }){
@@ -125,21 +137,11 @@
 
         function book() {
             sessionStorage.setItem('booking', bookedSeats);
+            window.location = "summary.html";
+
         }
 
-        window.setTimeout(function() {
-            const alertText = 'Sesja wygasła, za chwile zostaniesz przeniesiony na stronę logowania.'
-
-            alert(alertText);
-
-            book = function() {
-                alert(alertText);
-            }
-
-            window.setTimeout(function() { window.location = 'index.html' }, 1000 * 5)
-        }, 1000 * 60 * 10)
-
         clcikedSeat();
-        </script>
+    </script>
 </body>
 </html>

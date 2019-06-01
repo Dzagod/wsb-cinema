@@ -2,7 +2,7 @@
 body {
   background-image: radial-gradient(circle, #ffffff, #fffcff, #fffafb, #fff7f3, #fff7ec, #fef8e9, #fbf9e7, #f8fae6, #f9fbe6, #fafce6, #fbfee7, #fcffe7);
   background-size: contain;
-  height: 1000px;
+  height: auto;
   font-family: 'Lato', sans-serif; }
 
 .header {
@@ -69,7 +69,8 @@ h3 {
   background-color: #282828;
   text-align: center;
   margin-bottom: 0em;
-  margin-top: 10em;
+  width: 100%;
+  margin-top: 1em;
   padding-top: 2em;
   padding-bottom: 2em; }
   .footer p {
@@ -211,6 +212,38 @@ td:hover {
     width: 80%;
     background-color: #282828; }
 
+.headerSummary h2 {
+  margin: 2em; }
+
+.summary1 {
+  font-size: 2em;
+  font-weight: 600;
+  margin: 2em; }
+
+.summary2 {
+  font-size: 2em;
+  font-weight: 600;
+  margin: 2em; }
+
+.pricing {
+  border: 0.2em solid #282828;
+  margin: 2em;
+  font-size: 1.2em;
+  padding: 1em; }
+
+.podscriptum {
+  font-size: 1.4em;
+  margin: 2em;
+  font-weight: 400; }
+
+.sumImage {
+  height: auto;
+  min-height: 200px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-image: url("summaryImage.png"); }
+
 @media (max-width: 950px) {
   .movieList {
     display: flex;
@@ -245,3 +278,9 @@ td:hover {
 @media (max-width: 331px) {
   h2 {
     font-size: 0.6em; } }
+
+@media (max-width: 550px) {
+  .sumImage {
+    height: 0px;
+    width: 0px;
+    background: none; } }

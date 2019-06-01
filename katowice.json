@@ -6,7 +6,7 @@
             "title": "HIKER DZIKA WSPINACZKA",
             "type": "Akcja",
             "duration": 136,
-            "time": "14:00",
+            "time": "17:00",
             "age": 13,
             "image": "hiker.png",
             "description": "Ponad 2 godziny wypełnione emocjonującą górską wspinaczką. Imponujące ujęcia prosto z legendarnych dróg Yosemite prowadzonych przez światowej sławy wspinaczy. "
@@ -14,24 +14,24 @@
         },
 
         {
-            "title": "Nowe, stare",
-            "type": "Dramat",
-            "duration": 127,
-            "time": "17:00",
+            "title": "Nibylandia II",
+            "type": "Animowany, Fantasy",
+            "duration": 116,
+            "time": "12:00",
             "age": 13,
-            "image": "",
-            "description": "Historia o odwadze, sile słowa i powojennym świecie. Rodzących się na nowo nieraz skomplikowanych relacjach. Miejscem akcji jest hiszpańska prowincja Sapad, a bohaterami jej mieszkańcy. Tu od lat mieszka Maria (Alona Moore) – włoska pisarka i miejscowy autorytet."
+            "image": "nibylandia.png",
+            "description": "Lorem Ipsum...."
 
         },
 
         {
-            "title": "Samotna droga",
-            "type": "Horror",
-            "duration": 144,
+            "title": "Black Suits",
+            "type": "Thriller",
+            "duration": 135,
             "time": "21:00",
             "age": 16,
-            "image": "",
-            "description": "Kiedy w tajemniczych okolicznościach ginie towarzysz Gima, musi on zmierzyć się z nieznanymi siłami, które próbują nie tylko odciąć mu drogę do domu, ale i uwikłać go w morderstwo przyjaciela."
+            "image": "blackSuits.png",
+            "description": "Lorem ipsum........"
         }
 
     ]
