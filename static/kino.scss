@@ -18,8 +18,7 @@ body{
 }
 
 .logo{
-    width: 15%;
-    padding: 1em;
+    margin: 1.5em;
 }
 
 h3{
@@ -150,6 +149,7 @@ h3{
     height: 100px;
     text-align: center;
     margin: 2em;
+    font-size: 2em;
 }
 
 .cinemaHall{
@@ -222,8 +222,7 @@ td:hover{
     background-color: red;
 }
 
-.confirmButton{                  //zmienna font + font size?
-    font-size: 0.5em;
+.confirmButton{                  
     padding: 0.1em;
     margin: 3em;
     height: 4em;

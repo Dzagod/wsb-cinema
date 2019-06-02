@@ -6,8 +6,9 @@
         {
             "label": "Sass Compile",
             "type": "shell",
-            "command": "node-sass kino.scss kino.css",
-            "group": "build"
+            "command": "node-sass static/kino.scss static/kino.css",
+            "group": "build",
+            "problemMatcher": []
         }
     ]
 }

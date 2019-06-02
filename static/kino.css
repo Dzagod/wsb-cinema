@@ -14,8 +14,7 @@ body {
   text-align: left; }
 
 .logo {
-  width: 15%;
-  padding: 1em; }
+  margin: 1.5em; }
 
 h3 {
   font-size: 2.2em;
@@ -117,7 +116,8 @@ h3 {
 .movieInfo {
   height: 100px;
   text-align: center;
-  margin: 2em; }
+  margin: 2em;
+  font-size: 2em; }
 
 .cinemaHall {
   display: flex;
@@ -177,7 +177,6 @@ td:hover {
   background-color: red; }
 
 .confirmButton {
-  font-size: 0.5em;
   padding: 0.1em;
   margin: 3em;
   height: 4em;
