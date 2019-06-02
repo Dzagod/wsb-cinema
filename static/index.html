@@ -51,9 +51,33 @@
             if(emailTest.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)){ 
                 var pass = document.getElementById("inputPassword").value; 
                     if (pass.match(/[a-z]/g) && pass.match(/[A-Z]/g) && pass.match( /[0-9]/g) && pass.match( /[^a-zA-Z\d]/g) && pass.length >= 8){ 
-                        alert("Zalogowano");
 
-                        document.location = 'city.html';
+                        let status = null;
+
+                        fetch('/login', {
+                            method: 'POST',
+                            mode: 'cors', // no-cors, cors, *same-origin
+                            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+                            credentials: 'same-origin', // include, *same-origin, omit
+                            headers: {
+                                'Content-Type': 'application/json',
+                                // 'Content-Type': 'application/x-www-form-urlencoded',
+                            },
+                            redirect: 'follow', // manual, *follow, error
+                            referrer: 'no-referrer', // no-referrer, *client
+                            body: JSON.stringify({ email: emailTest, password: pass })
+                        })
+                            .then(function(res) {
+                                status = res.status;
+
+                                return res.json();
+                            })
+                            .then(function(result) {
+                                alert(result.message);
+                                if (status === 201 || status === 200) {
+                                    window.location = 'city.html';
+                                }
+                            })
                         return true;
                     } 
                     else{
