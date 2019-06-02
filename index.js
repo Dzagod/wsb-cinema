@@ -16,6 +16,10 @@ MongoClient.connect('mongodb://jagoda:test123@ds263876.mlab.com:63876/heroku_244
             })
         })
 
+        app.post('/login', function(req, res) {
+            res.statusCode(200).send();
+        })
+
     } else {
         console.err('cannot establish connection to dbs');
     }
